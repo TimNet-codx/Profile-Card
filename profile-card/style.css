@@ -1,0 +1,193 @@
+/* ---------- Theme Variables ---------- */
+:root {
+  --blue-gradient: linear-gradient(135deg, #0072ff, #00c6ff);
+  --text-color: #222;
+  --subtext-color: #555;
+  --bg-color: #f3f4f7;
+  --card-bg: #fff;
+  --accent-color: #0072ff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #f5f5f5;
+  --subtext-color: #bbb;
+  --accent-color: #00c6ff;
+}
+
+/* ---------- Global Styles ---------- */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.3s ease;
+}
+
+/* ---------- Card ---------- */
+.profile-card {
+  background: var(--card-bg);
+  width: 360px;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------- Header Gradient ---------- */
+.card-header {
+  background: var(--blue-gradient);
+  height: 130px;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+/* ---------- Profile Image ---------- */
+.profile-image-wrapper {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Content ---------- */
+.card-content {
+  margin-top: 80px;
+  padding: 1.8rem 1.5rem;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.6rem;
+}
+
+.profile-description {
+  font-size: 0.95rem;
+  color: var(--subtext-color);
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+
+/* ---------- Info Sections ---------- */
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid var(--accent-color);
+  padding-top: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-block {
+  width: 45%;
+  text-align: left;
+}
+
+.info-block h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.info-block ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+  color: var(--subtext-color);
+  font-size: 0.9rem;
+}
+
+/* ---------- Social Icons ---------- */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--subtext-color);
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* ---------- Social Links (text list) ---------- */
+.social-links-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.social-links-list a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.social-links-list a:hover {
+  opacity: 0.8;
+}
+
+/* ---------- Theme Toggle ---------- */
+#theme-toggle {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: #005fcc;
+  transform: scale(1.05);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .profile-card {
+    width: 90%;
+  }
+
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-block {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
